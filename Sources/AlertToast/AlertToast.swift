@@ -91,12 +91,12 @@ fileprivate struct AnimatedXmark: View {
 @available(iOS 13, macOS 11, *)
 public struct AlertToast: View{
     
-    public enum BannerAnimation{
+    public enum BannerAnimation: Equatable, Hashable {
         case slide, pop
     }
     
     /// Determine how the alert will be display
-    public enum DisplayMode: Equatable{
+    public enum DisplayMode: Equatable, Hashable {
         
         ///Present at the center of the screen
         case alert
@@ -109,7 +109,7 @@ public struct AlertToast: View{
     }
     
     /// Determine what the alert will display
-    public enum AlertType: Equatable{
+    public enum AlertType: Equatable, Hashable {
         
         ///Animated checkmark
         case complete(_ color: Color)
